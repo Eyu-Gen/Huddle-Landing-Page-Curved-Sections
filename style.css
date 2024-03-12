@@ -1,3 +1,4 @@
+/* Universal style */
 *{
     margin: 0;
     padding: 0;
@@ -5,15 +6,17 @@
 }
 
 :root{
-    --pink: #ff52bf;
+    --pink: #ff2db2;
     --lightPink: #ff8fd8;
     --lightRed: #ff4242;
     --darkCyan: #00252e;
-    --paleBlue: #f5faff;
+    --paleBlue: #F6FBFF;
     --fontPrimary: Poppins;
     --fontSeconday: Open Sans;
 }
 
+
+/* Main Parents Style */
 img{
     width: 100%;
     height: 100%;
@@ -21,7 +24,7 @@ img{
 }
 
 .button{
-    box-shadow: 1px 1px 4px rgba(175, 174, 174, 0.289);
+    font-family: var(--fontSeconday);
     border-radius: 20px;
     text-transform: capitalize;
     cursor: pointer;
@@ -32,6 +35,41 @@ img{
     opacity: 60%;
 }
 
+.container{
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: var(--fontPrimary);
+    text-transform: capitalize;
+    color: var(--darkCyan);
+}
+
+.para{
+    font-family: var(--fontSeconday);
+    font-weight: 500;
+    color: var(--darkCyan);
+}
+
+.bgTop, .bgBottom{
+    position: absolute;
+}
+
+
+/* Header Style */
 header{
     display: flex;
     justify-content: space-between;
@@ -48,10 +86,238 @@ header{
     border: 1.5px solid var(--lightPink);
     background-color: white;
     color: var(--lightPink);
+    font-weight: 500;
+    box-shadow: 1px 1px 3px var(--lightPink);
 }
 
+
+/* Hero Section Style */
+.heroSection{
+    text-align: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.heroSection>.content{
+    flex-direction: column;
+}
+
+.heroPara{
+    width: 45%;
+    margin: 20px 0px;
+}
+
+.startButton{
+    padding: 10px 50px;
+    border: none;
+    background-color: var(--pink);
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 3px 3px rgba(181, 181, 181, 0.8);
+}
+
+.heroSection>.middleHero{
+    padding: 10px 50px;
+}
+
+.heroSection>.lowerHero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.subcontent>.imageSection{
+    width: 30px;
+}
+
+.subcontent>.subcontentHeading{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: var(--fontSeconday);
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.subcontent>.subcontentPara{
+    opacity: 70%;
+}
+
+/* Grow Together and Your User section background Style */
+/* Container */
+.growSection,
+.userSection{
+    background-color: var(--paleBlue);
+    padding: 70px;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+/* Background Top */
+.growSection>.bgTop,
+.userSection>.bgTop{
+    width: 100%;
+    top: -120px;
+    left: 0;
+}
+
+/* Background Bottom */
+.growSection>.bgBottom,
+.userSection>.bgBottom{
+    width: 100%;
+    bottom: -120px;
+    left: 0;
+}
+
+/* Hidding Mobile and Tablet Background */
+.growTopMobile, .growBottomMobile, 
+.userTopMobile, .userBottomMobile{
+    display: none;
+}
+
+/* Flowing Conversations Section Style */
+.conversationSection{
+    margin-top: 100px;
+    justify-content: space-around;
+}
+
+
+/* All sections Combined Style Excluding Hero Section */
+/* Content */
+.growSection>.content,
+.conversationSection>.content,
+.userSection>.content{
+    width: 40%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Heading */
+.leftGrow>.growHeading,
+.rightConversation>.conversationHeading,
+.leftUser>.userHeading{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Paragraph */
+.leftGrow>.growPara,
+.rightConversation>.conversationPara,
+.leftUser>.userPara{
+    font-size: 14px;
+}
+
+
 @media only screen and (max-width:540px) {
+    /* Main Parents Style for Mobiles and Tablets */
     header{
         padding: 20px;
+    }
+
+    .container{
+        padding: 50px 30px;
+    }
+
+    .heading{
+        font-size: 25px;
+    }
+
+    .para{
+        font-size: 14px;
+    }
+
+    .heading, .para{
+        width: 100%;
+    }
+
+
+    /* Hero Section Style for Mobile and Tablets */
+    .heroSection>.lowerHero{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .heroSection>.middleHero{
+        padding: 0;
+    }
+
+    /* Grow Together Section Style for Mobile and Tablets  */
+    .growSection{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .growSection>.content{
+        width: 100%;
+    }
+
+    .growTopDesktop, .growButtomDesktop{
+        display: none;
+    }
+
+    .growTopMobile, .growBottomMobile{
+        display: block;
+    }
+
+    .growSection>.bgTop{
+        top: -100px;
+    }
+
+    .growSection>.bgBottom{
+        bottom: -50px;
+    }
+
+    .leftGrow>.growHeading,
+    .leftGrow>.growPara{
+        text-align: center;
+    }
+
+
+    /* Flowing Conversations Section Style for Mobile and Tablets  */
+    .conversationSection{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .conversationSection>.content{
+        width: 100%;
+    }
+
+    .rightConversation>.conversationHeading,
+    .rightConversation>.conversationPara{
+        text-align: center;
+    }
+
+    /* Your User Section Style for Mobile and Tablets */
+    .userSection{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .userSection>.content{
+        width: 100%;
+    }
+
+    .userTopDesktop, .userButtomDesktop{
+        display: none;
+    }
+
+    .userTopMobile, .userBottomMobile{
+        display: block;
+    }
+
+    .userSection>.bgTop{
+        top: -100px;
+    }
+
+    .userSection>.bgBottom{
+        bottom: -100px;
+    }
+
+    .leftUser>.userHeading,
+    .leftUser>.userPara{
+        text-align: center;
     }
 }
