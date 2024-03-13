@@ -143,7 +143,7 @@ header{
     opacity: 70%;
 }
 
-/* Grow Together and Your User section background Style */
+/* Grow Together and Your User section Style */
 /* Container */
 .growSection,
 .userSection{
@@ -155,9 +155,10 @@ header{
 
 /* Background Top */
 .growSection>.bgTop,
-.userSection>.bgTop{
+.userSection>.bgTop,
+footer>.bgTop{
     width: 100%;
-    top: -120px;
+    top: -130px;
     left: 0;
 }
 
@@ -171,11 +172,13 @@ header{
 
 /* Hidding Mobile and Tablet Background */
 .growTopMobile, .growBottomMobile, 
-.userTopMobile, .userBottomMobile{
+.userTopMobile, .userBottomMobile,
+.footerTopMobile{
     display: none;
 }
 
-/* Flowing Conversations Section Style */
+/* Flowing Conversations and Ready to Build Section Style */
+.readySection,
 .conversationSection{
     margin-top: 100px;
     justify-content: space-around;
@@ -186,7 +189,8 @@ header{
 /* Content */
 .growSection>.content,
 .conversationSection>.content,
-.userSection>.content{
+.userSection>.content,
+footer>.content{
     width: 40%;
     display: flex;
     align-items: baseline;
@@ -205,10 +209,129 @@ header{
 /* Paragraph */
 .leftGrow>.growPara,
 .rightConversation>.conversationPara,
-.leftUser>.userPara{
+.leftUser>.userPara,
+.contactSection>.contactPara{
     font-size: 14px;
 }
 
+/* Ready Section Style */
+.readySection>.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Footer Section */
+footer{
+    background-color: var(--darkCyan);
+    position: relative;
+    margin-top: 150px;
+    padding: 50px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contactSection>.contactPara,
+.helpSection>.helpPara{
+    color: var(--paleBlue);
+    width: 70%;
+    font-size: 14px;
+    margin: 20px 0px;
+}
+
+.contactSection>.subContent{
+    display: flex;
+    align-items: center;
+    color: var(--paleBlue);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactSection>.subContent>.imageSection{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.contactSection>.subContent>.para{
+    font-size: 14px;
+    color: var(--paleBlue);
+}
+
+.contactSection>.socialMedia{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contactSection>.socialMedia>.imageSection{
+    border: 1.5px solid white;
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    margin-right: 20px;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
+
+    &:hover{
+        background-color: rgb(36, 170, 197);
+        border-color: rgb(36, 170, 197);
+    }
+}
+
+.helpSection>.heading{
+    color: var(--paleBlue);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.helpSection>.inputSection{
+    width: 100%;
+}
+
+.inputSection>.email{
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right: 20px;
+    width: 60%;
+    
+}
+
+.inputSection>.subscribe{
+    border: none;
+    padding: 8px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: var(--fontPrimary);
+    font-weight: 500;
+    background-color: var(--pink);
+}
+
+@media only screen and (max-width:1025px) and (min-width:540px) {
+    /* Background Top */
+.growSection>.bgTop,
+.userSection>.bgTop,
+footer>.bgTop{
+    width: 100%;
+    top: -80px;
+    left: 0;
+}
+
+/* Background Bottom */
+.growSection>.bgBottom,
+.userSection>.bgBottom{
+    width: 100%;
+    bottom: -75px;
+    left: 0;
+}
+}
 
 @media only screen and (max-width:540px) {
     /* Main Parents Style for Mobiles and Tablets */
@@ -309,15 +432,55 @@ header{
     }
 
     .userSection>.bgTop{
-        top: -100px;
+        top: -80px;
     }
 
     .userSection>.bgBottom{
-        bottom: -100px;
+        bottom: -80px;
     }
 
     .leftUser>.userHeading,
     .leftUser>.userPara{
         text-align: center;
+    }
+
+    /* Footer Style */
+    footer{
+        flex-direction: column-reverse;
+        padding: 50px 30px;
+        gap: 50px;
+    }
+
+    footer>.content{
+        width: 100%;
+    }
+
+    .contactSection>.contactPara,
+    .helpSection>.helpPara{
+        width: 100%;
+    }
+
+    .helpSection>.inputSection{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: end;
+    }
+
+    .inputSection>.email{
+        width: 100%;
+        margin: 0;
+    }
+
+    .footerTopDesktop{
+        display: none;
+    }
+
+    .footerTopMobile{
+        display: block;
+    }
+
+    footer>.bgTop{
+        top: -50px;
     }
 }
